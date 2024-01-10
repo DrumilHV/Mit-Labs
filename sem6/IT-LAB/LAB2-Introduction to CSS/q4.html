@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Class Timetable</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .table-responsive {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Class Timetable</h2>
+
+        <!-- Carousel -->
+        <div id="timetableCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Monday View -->
+                <div class="carousel-item active">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Subject 1</th>
+                                    <th>Subject 2</th>
+                                    <th>Subject 3</th>
+                                    <!-- Add more subjects as needed -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>8:00 AM - 9:00 AM</td>
+                                    <td>Math</td>
+                                    <td>Science</td>
+                                    <td>English</td>
+                                </tr>
+                                <tr>
+                                    <td>9:00 AM - 10:00 AM</td>
+                                    <td>History</td>
+                                    <td>Physical Education</td>
+                                    <td>Chemistry</td>
+                                </tr>
+                                <!-- Add more rows for each time slot -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tuesday View -->
+                <div class="carousel-item">
+                    <div class="table-responsive">
+                        <!-- Similar structure as Monday View -->
+                    </div>
+                </div>
+
+                <!-- Add more days as needed -->
+
+            </div>
+
+            <!-- Navigation Arrows -->
+            <a class="carousel-control-prev" href="#timetableCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#timetableCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
