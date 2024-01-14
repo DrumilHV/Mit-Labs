@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch GFG",
+      "request": "launch",
+      "mainClass": "GFG",
+      "projectName": "DAA Lab_3af935b2"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/drumilved/Desktop/lab work/sem 4/DAA Lab",
+      "program": "/Users/drumilved/Desktop/lab work/sem 4/DAA Lab/build/Debug/outDebug"
+    }
+  ]
+}
