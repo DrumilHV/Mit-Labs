@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 50px;
+        }
+
+        input[type="radio"] {
+            margin: 10px;
+        }
+
+        #colorBox {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<input type="radio" name="color" id="red" onclick="changeColor('red')">
+<label for="red">Red</label>
+
+<input type="radio" name="color" id="blue" onclick="changeColor('blue')">
+<label for="blue">Blue</label>
+
+<input type="radio" name="color" id="green" onclick="changeColor('green')">
+<label for="green">Green</label>
+
+<div id="colorBox"></div>
+
+<script>
+    function changeColor(color) {
+        var colorBox = document.getElementById('colorBox');
+        colorBox.style.backgroundColor = color;
+    }
+</script>
+
+</body>
+</html>

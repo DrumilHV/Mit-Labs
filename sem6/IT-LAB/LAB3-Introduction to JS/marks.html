@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <!-- <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input {
+            margin: 10px;
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style> -->
+    <style>body {
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        margin: 50px;
+        background-color: #f5f5f5;
+    }
+    
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    input {
+        margin: 10px;
+        padding: 8px;
+        width: 80%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    label {
+        font-size: 16px;
+    }
+    
+    button {
+        margin: 10px;
+        padding: 10px;
+        width: 80%;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    #result {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #333;
+    }
+    </style>
+    <link rel="stylesheet" href="mars.css" type="text/css">
+</head>
+<body>
+
+<label for="subject1">Subject 1:</label>
+<input type="number" id="subject1" min="0" max="100" required>
+<br>
+
+<label for="subject2">Subject 2:</label>
+<input type="number" id="subject2" min="0" max="100" required>
+<br>
+
+<label for="subject3">Subject 3:</label>
+<input type="number" id="subject3" min="0" max="100" required>
+<br>
+
+<label for="subject4">Subject 4:</label>
+<input type="number" id="subject4" min="0" max="100" required>
+<br>
+
+<button onclick="calculateGrade()">Calculate Grade</button>
+<div id="result"></div>
+
+<script>
+    function calculateGrade() {
+        var subject1 = parseFloat(document.getElementById('subject1').value);
+        var subject2 = parseFloat(document.getElementById('subject2').value);
+        var subject3 = parseFloat(document.getElementById('subject3').value);
+        var subject4 = parseFloat(document.getElementById('subject4').value);
+
+        var average = (subject1 + subject2 + subject3 + subject4) / 4;
+
+        var resultElement = document.getElementById('result');
+
+        if (isNaN(average)) {
+            resultElement.textContent = "Please enter valid marks for all subjects.";
+        } else {
+            resultElement.textContent = "Average Grade: " + getGrade(average);
+        }
+    }
+
+    function getGrade(average) {
+        if (average > 90) {
+            return 'A';
+        } else if (average > 80) {
+            return 'B';
+        } else if (average > 70) {
+            return 'C';
+        } else if (average > 60) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+    }
+</script>
+
+</body>
+</html>
