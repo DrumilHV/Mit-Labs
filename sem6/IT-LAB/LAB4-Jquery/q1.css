@@ -1,0 +1,13 @@
+.myclass{
+    margin-left: 100px;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+html, body{
+    color : black !important;
+    background-color: beige;
+}

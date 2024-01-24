@@ -1,0 +1,86 @@
+<!-- <html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="q1.css" type="text/css">
+
+        <script type="text/javascript" src='jquery.js'></script>
+        <script>
+            function move(){
+                $('#table').classList.toggle('myclass');
+                $('button').classList.toggle('myclass');
+            }
+            
+
+        </script>
+    </head>
+    <body>
+        <table id="table">
+            <tr class="red">
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr class="blue">
+                <td>Adam </td>
+                <td>Azman</td>
+                <td>21</td>
+            </tr>
+            <tr class="red">
+                <td>Abhishek </td>
+                <td>kudwa</td>
+                <td>20</td>
+            </tr>
+            <tr class="blue">
+                <td>Punith</td>
+                <td>Nayak</td>
+                <td>20</td>
+            </tr>
+        </table>
+        <img src="rocks.jpg" class="myimg" alt="Rocks">
+
+        <button onclick="move()" type="button" class="myclass">Click Me!</button>
+    </body>
+    
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="q1.css" type="text/css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script>
+        function move() {
+            $('#table, img').toggleClass('myclass');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <table id="table">
+            <tr class="red">
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr class="blue">
+                <td>Adam</td>
+                <td>Azman</td>
+                <td>21</td>
+            </tr>
+            <tr class="red">
+                <td>Abhishek</td>
+                <td>kudwa</td>
+                <td>20</td>
+            </tr>
+            <tr class="blue">
+                <td>Punith</td>
+                <td>Nayak</td>
+                <td>20</td>
+            </tr>
+        </table>
+        <img src="rocks.jpg" class="myimg" alt="Rocks">
+    </div>
+
+    <button onclick="move()" type="button" class="myclass">Click Me!</button>
+</body>
+</html>
