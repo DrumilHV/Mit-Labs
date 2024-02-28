@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery.js"></script>
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div id="quiz"></div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      const questions = [
+        {
+          q: "Who is Prime Minister of Bharat? ",
+          sol: "MODI ji",
+          option: ["MODI ji", "rahul gandhi", "Manmohan Singh"],
+        },
+        {
+          q: "when did Bharat get swaraj ?",
+          sol: "2014",
+          option: ["2014", "1947", "1951", "1948"],
+        },
+        {
+          q: "Who is Prime Minister of Bharat? ",
+          sol: "MODI ji",
+          option: ["MODI ji", "rahul gandhi", "Manmohan Singh"],
+        },
+        {
+          q: "when did Bharat get swaraj ?",
+          sol: "2014",
+          option: ["2014", "1947", "1951", "1948"],
+        },
+        {
+          q: "Who is Prime Minister of Bharat? ",
+          sol: "MODI ji",
+          option: ["MODI ji", "rahul gandhi", "Manmohan Singh"],
+        },
+        {
+          q: "when did Bharat get swaraj ?",
+          sol: "2014",
+          option: ["2014", "1947", "1951", "1948"],
+        },
+        {
+          q: "Who is Prime Minister of Bharat? ",
+          sol: "MODI ji",
+          option: ["MODI ji", "rahul gandhi", "Manmohan Singh"],
+        },
+        {
+          q: "when did Bharat get swaraj ?",
+          sol: "2014",
+          option: ["2014", "1947", "1951", "1948"],
+        },
+      ];
+      var htmlContent = "";
+      questions.map((ques, index) => {
+        htmlContent += `
+        <div>
+          <h1> ${ques.q} </h1>
+          <h3>Options</h3>
+          <form id="form${index + 1}">
+        `;
+        ques.option.forEach((opt, optIndex) => {
+          htmlContent += `
+              <input type="checkbox" name="option${
+                index + 1
+              }" value="${opt}" id="option${index + 1}_${optIndex + 1}">
+              <label for="option${index + 1}_${optIndex + 1}">${opt}</label><br>
+            `;
+        });
+        htmlContent += `
+              </form>
+              <button onclick="checkAnswer(${index + 1})">Check Answer</button>
+              <div id="result${index + 1}"></div>
+            </div>
+          `;
+      });
+      function checkAnswer(questionIndex) {
+        // Implement the logic to check the answer and update the score
+        var selectedOptions = $(`#form${questionIndex} input:checked`)
+          .map(function () {
+            return $(this).val();
+          })
+          .get();
+
+        var correctOptions = questions[questionIndex - 1].sol;
+
+        var isCorrect =
+          JSON.stringify(selectedOptions.sort()) ===
+          JSON.stringify(correctOptions.sort());
+
+        $("#result" + questionIndex).html(
+          isCorrect ? "Correct!" : "Incorrect!"
+        );
+      }
+
+      console.log(htmlContent);
+      $("#quiz").html(htmlContent);
+    });
+  </script>
+</html>

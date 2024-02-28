@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Checked Checkboxes in JavaScript</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <form id="myForm">
+      <label>
+        <input type="checkbox" name="fruit" value="apple" /> Apple
+      </label>
+
+      <label>
+        <input type="checkbox" name="fruit" value="orange" /> Orange
+      </label>
+
+      <label>
+        <input type="checkbox" name="fruit" value="banana" /> Banana
+      </label>
+
+      <button type="button" onclick="getCheckedCheckboxes()">
+        Get Checked Checkboxes
+      </button>
+      <div id="result"></div>
+      <div id="box"></div>
+    </form>
+
+    <!-- <script>
+      function getCheckedCheckboxes() {
+        var checkboxes = document.querySelectorAll(
+          'input[name="fruit"]:checked'
+        );
+        var values = Array.from(checkboxes).map((checkbox) => checkbox.value);
+
+        console.log("Selected Fruits:", values);
+      }
+    </script> -->
+    <script>
+      function getCheckedCheckboxes() {
+        var checks = $('input[name="fruit"]:checked');
+        var values = Array.from(checks).map((check) => check.value);
+        console.log(values);
+        $("#result").text(values);
+        $("#box").css({
+          width: "100px",
+          height: "100px",
+          "background-color": "blue",
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pic.css" />
+    <script src="jquery.js"></script>
+    <title>Mid Sem</title>
+  </head>
+  <body>
+    <div class="imgs">
+      <div id="img1">
+        <img src="china.jpg" height="100px" alt="img" />
+        <button id="btn1">+</button>
+        <h2 id="v1">5</h2>
+      </div>
+      <div id="img2">
+        <img src="china.jpg" height="100px" alt="img" />
+        <button id="btn2">+</button>
+        <h2 id="v2">5</h2>
+      </div>
+      <div id="img3">
+        <img src="china.jpg" height="100px" alt="img" />
+        <button id="btn3">+</button>
+        <h2 id="v3">5</h2>
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+    <div id="results"></div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      var cnt1 = 5;
+      var cnt2 = 5;
+      var cnt3 = 5;
+      $("#btn1").click(function () {
+        cnt1 += 1;
+        $("#v1").text(cnt1);
+      });
+      $("#btn2").click(function () {
+        cnt2 += 1;
+        $("#v2").text(cnt2);
+      });
+      $("#btn3").click(function () {
+        cnt3 += 1;
+        $("#v3").text(cnt3);
+      });
+      $("#submit").click(function () {
+        if (cnt1 < 10) {
+          $("#results").append(`
+          <div id="img1">
+            <h1> Image 1</h1>
+            <img src="china.jpg" height="100px" alt="img" />
+          </div>
+          `);
+        }
+        if (cnt2 < 10) {
+          $("#results").append(`
+          <div id="img2">
+            <h1> Image 2</h1>
+            <img src="china.jpg" height="100px" alt="img" />
+          </div>
+          `);
+        }
+        if (cnt3 < 10) {
+          $("#results").append(`
+          <div id="img3">
+            <h1> Image 3</h1>
+            <img src="china.jpg" height="100px" alt="img" />
+          </div>
+          `);
+          $("#results").innerHTML = "THis nigga !";
+        }
+      });
+    });
+  </script>
+</html>

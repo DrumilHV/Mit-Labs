@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <label>Checkboxes:</label>
+      <label
+        ><input type="checkbox" name="checkbox" value="option1" /> Option
+        1</label
+      >
+      <label
+        ><input type="checkbox" name="checkbox" value="option2" /> Option
+        2</label
+      >
+      <label
+        ><input type="checkbox" name="checkbox" value="option3" /> Option
+        3</label
+      >
+
+      <label>Radio Buttons:</label>
+      <label><input type="radio" name="gender" value="male" /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+
+      <button type="button" onclick="submitForm">Submit</button>
+      <div id="output"></div>
+    </form>
+  </body>
+  <script>
+    $(document).ready(function () {
+      function submitForm() {
+        // Retrieve form data
+        var formData = {
+          name: $("#name").val(),
+          age: $("#age").val(),
+          phone: $("#phone").val(),
+          address: $("#address").val(),
+          checkbox: $('input[name="checkbox"]:checked'),
+          gender: $('input[name="gender"]:checked').val(),
+        };
+        var options = Array.from(formData.checkbox).map((c) => c.value);
+        // Create a string to display the collected data
+        var outputString = "<h2>Collected Data</h2>";
+        outputString += "<p><strong>Name:</strong> " + formData.name + "</p>";
+        outputString += "<p><strong>Age:</strong> " + formData.age + "</p>";
+        outputString += "<p><strong>Phone:</strong> " + formData.phone + "</p>";
+        outputString +=
+          "<p><strong>Address:</strong> " + formData.address + "</p>";
+        outputString += "<p><strong>Checkboxes:</strong> " + options;
+        ("</p>");
+        outputString +=
+          "<p><strong>Gender:</strong> " + formData.gender + "</p>";
+
+        // Append the data to the output div
+        $("#output").html(outputString);
+      }
+
+      // Attach the click event using jQuery
+      $("button").on("click", submitForm);
+    });
+  </script>
+</html>

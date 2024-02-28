@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Web Page</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- Top Part -->
+      <div class="row mb-3">
+        <div class="col">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your text"
+            />
+
+            <button class="btn btn-primary" type="button">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Part -->
+      <div class="row">
+        <!-- Bottom Left Part -->
+        <div class="col-lg-4 mb-3">
+          <div class="card">
+            <div class="card-header">Input Group with Badge</div>
+            <div class="card-body">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Username</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your username"
+                />
+                <span class="badge badge-secondary ml-2">New</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Center Part -->
+        <div class="col-lg-4 mb-3">
+          <div class="card">
+            <div class="card-header">Button Group</div>
+            <div class="card-body">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Left</button>
+                <button type="button" class="btn btn-secondary">Middle</button>
+                <button type="button" class="btn btn-secondary">Right</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Right Part -->
+        <div class="col-lg-4 mb-3">
+          <div class="card">
+            <div class="card-header">Input with Button</div>
+            <div class="card-body">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Recipient's username"
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">
+                    Button
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

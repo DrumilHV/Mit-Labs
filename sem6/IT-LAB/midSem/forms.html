@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery.js"></script>
+    <title>Forms</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <form>
+      <label for="name">
+        name:
+        <input type="text" for="name" />
+      </label>
+      <br />
+      <br />
+      <label>
+        age:
+        <input type="number" max="200" min="0" for="age" />
+      </label>
+      <label for="color">
+        color:
+        <input for="color" name="color" value="red" />
+      </label>
+      <div class="box"></div>
+    </form>
+    <script>
+        $(document).ready(function(){
+
+        })
+    </script> -->
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <br />
+      <label for="color">Color </label>
+      <br />
+      <label>Red</label>
+      <input name="color" type="radio" for="red" value="red" />
+      <br />
+      <label>blue</label>
+      <input name="color" type="radio" for="blue" value="blue" />
+      <br />
+      <label>green</label>
+      <input name="color" type="radio" for="green" value="green" />
+      <br />
+      <label for="eat"> Fruit </label>
+      <label for="">apple</label>
+      <input type="checkbox" for="apple" name="fruit" value="apple" />
+      <label for="">banana</label>
+      <input type="checkbox" for="banana" name="fruit" value="banana" />
+      <label for="">orange</label>
+      <input type="checkbox" for="orange" name="fruit" value="orange" />
+      <label for="">greaps</label>
+      <input type="checkbox" for="greaps" name="fruit" value="greaps" />
+      <div class="box"></div>
+      <label for="myDropdown">Select a fruit:</label>
+      <select id="myDropdown">
+        <option value="apple">Apple</option>
+        <option value="banana" selected>Banana</option>
+        <option value="orange">Orange</option>
+        <option value="grape">Grape</option>
+      </select>
+
+      <button type="button" onclick="getFormData()">Get Form Data</button>
+      <div id="result"></div>
+    </form>
+    <div id="mydiv">
+      Click on this to see a dialogue box.
+      <input type="button" id="button" />
+    </div>
+
+    <script type="text/javascript" language="javascript">
+      $(document).ready(function () {
+        $("#button").click(function () {
+          $(this).val("Stop that!");
+        }); // end click
+      });
+    </script>
+    <script>
+      function getFormData() {
+        // Use jQuery to retrieve form data
+        var nameValue = $("#name").val();
+        var emailValue = $("#email").val();
+        var color = $('input[name="color"]:checked').val();
+        var f = $('input[name="fruit"]:checked');
+        var fruits = Array.from(f).map((fr) => fr.value);
+
+        console.log("Name:", nameValue);
+        console.log("Email:", emailValue);
+        console.log("color:", color);
+
+        // Retrieve the selected value from the dropdown
+        var selectedValue = $("#myDropdown").val();
+
+        // Display the selected value (you can modify this part based on your needs)
+        alert("Selected value: " + selectedValue);
+
+        $("#result").html(`
+        <h1> Name: ${nameValue}</h1>
+        <br/>
+        <h1> Email: ${emailValue}</h1>
+        <br/>
+        <h1> Fruits: ${fruits}</h1>
+        `);
+        $(".box").css({ "background-color": color });
+      }
+    </script>
+  </body>
+</html>
