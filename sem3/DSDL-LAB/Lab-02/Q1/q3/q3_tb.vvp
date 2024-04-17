@@ -1,0 +1,105 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5619c7c0d660 .scope module, "q3_tb" "q3_tb" 2 4;
+ .timescale -9 -9;
+v0x5619c7c23f10_0 .net "lhs", 0 0, L_0x5619c7c244a0;  1 drivers
+v0x5619c7c23fd0_0 .net "rhs", 0 0, L_0x5619c7c24710;  1 drivers
+v0x5619c7c240a0_0 .var "x", 0 0;
+v0x5619c7c241a0_0 .var "y", 0 0;
+v0x5619c7c24270_0 .var "z", 0 0;
+S_0x5619c7c0d7f0 .scope module, "q_3" "q3" 2 7, 3 1 0, S_0x5619c7c0d660;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /INPUT 1 "z";
+    .port_info 3 /OUTPUT 1 "lhs";
+    .port_info 4 /OUTPUT 1 "rhs";
+L_0x5619c7c24360 .functor AND 1, v0x5619c7c241a0_0, v0x5619c7c24270_0, C4<1>, C4<1>;
+L_0x5619c7c244a0 .functor OR 1, v0x5619c7c240a0_0, L_0x5619c7c24360, C4<0>, C4<0>;
+L_0x5619c7c24600 .functor OR 1, v0x5619c7c240a0_0, v0x5619c7c241a0_0, C4<0>, C4<0>;
+L_0x5619c7c24670 .functor OR 1, v0x5619c7c240a0_0, v0x5619c7c24270_0, C4<0>, C4<0>;
+L_0x5619c7c24710 .functor AND 1, L_0x5619c7c24600, L_0x5619c7c24670, C4<1>, C4<1>;
+v0x5619c7c0d9d0_0 .net *"_ivl_0", 0 0, L_0x5619c7c24360;  1 drivers
+v0x5619c7c238c0_0 .net *"_ivl_4", 0 0, L_0x5619c7c24600;  1 drivers
+v0x5619c7c239a0_0 .net *"_ivl_6", 0 0, L_0x5619c7c24670;  1 drivers
+v0x5619c7c23a60_0 .net "lhs", 0 0, L_0x5619c7c244a0;  alias, 1 drivers
+v0x5619c7c23b20_0 .net "rhs", 0 0, L_0x5619c7c24710;  alias, 1 drivers
+v0x5619c7c23c30_0 .net "x", 0 0, v0x5619c7c240a0_0;  1 drivers
+v0x5619c7c23cf0_0 .net "y", 0 0, v0x5619c7c241a0_0;  1 drivers
+v0x5619c7c23db0_0 .net "z", 0 0, v0x5619c7c24270_0;  1 drivers
+    .scope S_0x5619c7c0d660;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "q3_tb.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5619c7c0d660 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c240a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c241a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5619c7c24270_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 31 "$display", "Test complete" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "q3_tb.v";
+    "./q3.v";
