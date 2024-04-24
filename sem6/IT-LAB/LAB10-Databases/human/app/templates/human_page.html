@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Human Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#id_first_name").change(function () {
+          var selected_name = $(this).val();
+          $.get("/get_human/", { first_name: selected_name }, function (data) {
+            $("#id_last_name").val(data.last_name);
+            $("#id_phone").val(data.phone);
+            $("#id_address").val(data.address);
+            $("#id_city").val(data.city);
+          });
+        });
+
+        $("#update_btn").click(function () {
+          $("#human_form").submit();
+        });
+
+        $("#delete_btn").click(function () {
+          if (confirm("Are you sure you want to delete this record?")) {
+            $("#delete_form").submit();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Human Page</h1>
+    <form id="human_form" method="POST" action="{% url 'human_page' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="button" id="update_btn">Update</button>
+      <button type="button" id="delete_btn">Delete</button>
+    </form>
+    <form id="delete_form" method="POST" action="{% url 'delete_human' %}">
+      {% csrf_token %}
+      <input type="hidden" name="first_name" id="delete_first_name" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Delete Human</title>
+  </head>
+  <body>
+    <h1>Delete Human</h1>
+    <form id="delete_form" method="POST" action="{% url 'delete_human' %}">
+      {% csrf_token %}
+      <label for="id_first_name">Select Human:</label>
+      <select name="first_name" id="id_first_name">
+        {% for human in humans %}
+        <option value="{{ human.first_name }}">{{ human.first_name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Delete</button>
+    </form>
+  </body>
+</html>

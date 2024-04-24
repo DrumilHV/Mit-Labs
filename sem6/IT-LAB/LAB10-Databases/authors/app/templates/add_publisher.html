@@ -1,0 +1,7 @@
+<!-- add_publisher.html -->
+
+<h1>Add Publisher</h1>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
