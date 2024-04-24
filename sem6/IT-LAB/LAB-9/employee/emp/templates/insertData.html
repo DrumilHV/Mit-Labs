@@ -1,0 +1,21 @@
+<html>
+  <form method="post">
+    {% csrf_token %}
+    <h1>works</h1>
+    <table>
+      {{work_form}}
+    </table>
+    <h1>lives</h1>
+    <table>
+      {{lives_form}}
+    </table>
+    <button type="submit">submit</button>
+  </form>
+  <hr />
+  {% for w in works %}
+  <hr />
+  <h1>{{w.name}}</h1>
+  <h1>{{w.company}}</h1>
+  <h1>{{w.salary}}</h1>
+  {%endfor%}
+</html>

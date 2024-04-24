@@ -1,0 +1,17 @@
+<html>
+  <h2>Retrieve Data</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="company_name">Company Name:</label>
+    <input type="text" id="company_name" name="company_name" />
+    <button type="submit">Retrieve</button>
+  </form>
+  {% if result %}
+  <h3>People working for {{ company_name }}</h3>
+  <ul>
+    {% for person, city in result %}
+    <li>{{ person }} - {{ city }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</html>
